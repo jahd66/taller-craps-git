@@ -4,8 +4,8 @@ public class Game {
     private int shootCount;
     private int shoot;
     private int point;
-    private boolean win;
-    private boolean lose;
+    private boolean won;
+    private boolean lost;
     private int gamesWon; // Contador de juegos ganados
     private int gamesLost; // Contador de juegos perdidos
     public Dice dice1, dice2;
@@ -14,8 +14,8 @@ public class Game {
         this.shootCount = 0;
         this.shoot = 0;
         this.point = 0;
-        this.win = false;
-        this.lose = false;
+        this.won = false;
+        this.lost = false;
         this.gamesWon = 0; // Inicializa el contador de juegos ganados
         this.gamesLost = 0; // Inicializa el contador de juegos perdidos
         this.dice1 = new Dice();
@@ -30,24 +30,24 @@ public class Game {
 
         if (shootCount == 1) { // Primera tirada
             if (shoot == 7 || shoot == 11) {
-                win = true;
-                lose = false;
+                won = true;
+                lost = false;
                 gamesWon++; // Incrementa el contador de juegos ganados
             } else if (shoot == 2 || shoot == 3 || shoot == 12) {
-                win = false;
-                lose = true;
+                won = false;
+                lost = true;
                 gamesLost++; // Incrementa el contador de juegos perdidos
             } else { // Establece el punto
                 point = shoot;
             }
         } else { // Tiros después del primer
             if (shoot == point) {
-                win = true;
-                lose = false;
+                won = true;
+                lost = false;
                 gamesWon++; // Incrementa el contador de juegos ganados
             } else if (shoot == 7) {
-                win = false;
-                lose = true;
+                won = false;
+                lost = true;
                 gamesLost++; // Incrementa el contador de juegos perdidos
             }
         }
@@ -66,11 +66,11 @@ public class Game {
     }
 
     public boolean isWin() {
-        return this.win;
+        return this.won;
     }
 
     public boolean isLose() {
-        return this.lose;
+        return this.lost;
     }
 
     public int getGamesWon() { // Método para obtener juegos ganados
