@@ -64,8 +64,9 @@
                 <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="99.59998168945313" minHeight="10.0" prefHeight="62.799993896484374" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="144.40000000000003" minHeight="10.0" prefHeight="59.60000610351562" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="144.40000000000003" minHeight="10.0" prefHeight="92.80000762939454" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Label text="Tiro">
@@ -73,13 +74,18 @@
                         <Insets left="102.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label fx:id="shootLabel" alignment="CENTER" prefHeight="16.0" prefWidth="16.0" style="-fx-border-color: black;" GridPane.columnIndex="1" />
+                  <Label fx:id="shootLabel" alignment="CENTER" prefHeight="18.0" prefWidth="24.0" style="-fx-border-color: black;" GridPane.columnIndex="1" />
                   <Label text="Punto" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="102.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label fx:id="pointLabel" alignment="CENTER" prefHeight="16.0" prefWidth="16.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="pointLabel" alignment="CENTER" prefHeight="18.0" prefWidth="25.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                     <children>
+                        <Label fx:id="resultLabel" alignment="CENTER" prefHeight="18.0" prefWidth="141.0" style="-fx-border-color: black;" />
+                     </children>
+                  </HBox>
                </children>
             </GridPane>
          </center>
@@ -99,13 +105,13 @@
                         <Insets right="10.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label fx:id="shotLabel1" alignment="CENTER" prefHeight="16.0" prefWidth="16.0" style="-fx-border-color: black;" GridPane.columnIndex="1" />
+                  <Label fx:id="gamesWonLabel" alignment="CENTER" prefHeight="16.0" prefWidth="16.0" style="-fx-border-color: black;" GridPane.columnIndex="1" />
                   <Label text="Juegos perdidos" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets right="10.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label fx:id="pointLabel1" alignment="CENTER" prefHeight="16.0" prefWidth="16.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="gamesLostLabel" alignment="CENTER" prefHeight="16.0" prefWidth="16.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
          </bottom>
