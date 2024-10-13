@@ -22,7 +22,7 @@ public class Game {
         this.dice2 = new Dice();
     }
 
-    public void rollDices() {
+    public void rollDices() throws Exception {
         dice1.rollDice();
         dice2.rollDice();
         this.shoot = dice1.getValue() + dice2.getValue();
