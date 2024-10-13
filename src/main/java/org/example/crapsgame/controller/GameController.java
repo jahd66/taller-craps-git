@@ -6,6 +6,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import org.example.crapsgame.model.EndException;
 import org.example.crapsgame.model.Game;
 
 public class GameController {
@@ -25,7 +26,7 @@ public class GameController {
     }
 
     @FXML
-    public void onHandleButtonRollTheDice(ActionEvent event) {
+    public void onHandleButtonRollTheDice(ActionEvent event) throws Exception {
         // Lanza los dados de la clase Game
         game.rollDices();
 
@@ -47,6 +48,7 @@ public class GameController {
         } else if (game.isLose()) {
             resultLabel.setText("¡Perdiste!");
             rollDiceButton.setDisable(true); //Deshabilita el boton si se pierde
+            throw new EndException();
         } else {
             resultLabel.setText("Continúa jugando...");
         }
