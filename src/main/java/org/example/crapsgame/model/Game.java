@@ -34,11 +34,13 @@ public class Game {
                 lost = false;
                 gamesWon++; // Incrementa el contador de juegos ganados
             } else if (shoot == 2 || shoot == 3 || shoot == 12) {
-                won = false;
                 lost = true;
+                won = false;
                 gamesLost++; // Incrementa el contador de juegos perdidos
             } else { // Establece el punto
                 point = shoot;
+                won = false;
+                lost = false;
             }
         } else { // Tiros después del primer
             if (shoot == point) {
@@ -46,11 +48,20 @@ public class Game {
                 lost = false;
                 gamesWon++; // Incrementa el contador de juegos ganados
             } else if (shoot == 7) {
-                won = false;
                 lost = true;
+                won = false;
                 gamesLost++; // Incrementa el contador de juegos perdidos
             }
         }
+    }
+
+    //Reinicia el estado del juego
+    public void resetGame() {
+        this.shootCount = 0;
+        this.shoot = 0;
+        this.point = 0;
+        this.won = false;
+        this.lost = false;
     }
 
     public int getShoot() {
